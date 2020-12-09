@@ -1,0 +1,282 @@
+{
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "@version": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "confidence_score": {
+          "type": "float"
+        },
+        "domain": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "features": {
+          "properties": {
+            "avg_query_value_digit_count": {
+              "type": "long"
+            },
+            "avg_query_value_length": {
+              "type": "long"
+            },
+            "avg_query_value_letter_count": {
+              "type": "long"
+            },
+            "avg_query_value_symbol_count": {
+              "type": "long"
+            },
+            "avg_query_variable_digit_count": {
+              "type": "long"
+            },
+            "avg_query_variable_length": {
+              "type": "long"
+            },
+            "avg_query_variable_letter_count": {
+              "type": "long"
+            },
+            "avg_query_variable_symbol_count": {
+              "type": "long"
+            },
+            "decoded_query_values": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "domain": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "domain_delimiter_count": {
+              "type": "long"
+            },
+            "domain_digit_count": {
+              "type": "long"
+            },
+            "domain_digit_to_letter_ratio": {
+              "type": "float"
+            },
+            "domain_letter_count": {
+              "type": "long"
+            },
+            "domain_symbol_count": {
+              "type": "long"
+            },
+            "file_ext": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "file_ext_delimiter_count": {
+              "type": "long"
+            },
+            "file_ext_digit_count": {
+              "type": "long"
+            },
+            "file_ext_digit_to_letter_ratio": {
+              "type": "long"
+            },
+            "file_ext_is_executable": {
+              "type": "long"
+            },
+            "file_ext_letter_count": {
+              "type": "long"
+            },
+            "file_ext_symbol_count": {
+              "type": "long"
+            },
+            "fragment": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "fragment_delimiter_count": {
+              "type": "long"
+            },
+            "fragment_digit_count": {
+              "type": "long"
+            },
+            "fragment_digit_to_letter_ratio": {
+              "type": "long"
+            },
+            "fragment_letter_count": {
+              "type": "long"
+            },
+            "fragment_symbol_count": {
+              "type": "long"
+            },
+            "ip_in_domain": {
+              "type": "long"
+            },
+            "ip_in_url": {
+              "type": "long"
+            },
+            "max_query_value_length": {
+              "type": "long"
+            },
+            "max_query_variable_length": {
+              "type": "long"
+            },
+            "path": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "path_delimiter_count": {
+              "type": "long"
+            },
+            "path_digit_count": {
+              "type": "long"
+            },
+            "path_digit_to_letter_ratio": {
+              "type": "float"
+            },
+            "path_letter_count": {
+              "type": "long"
+            },
+            "path_symbol_count": {
+              "type": "long"
+            },
+            "query": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "query_delimiter_count": {
+              "type": "long"
+            },
+            "query_digit_count": {
+              "type": "long"
+            },
+            "query_digit_to_letter_ratio": {
+              "type": "long"
+            },
+            "query_letter_count": {
+              "type": "long"
+            },
+            "query_symbol_count": {
+              "type": "long"
+            },
+            "subdomain_in": {
+              "type": "long"
+            },
+            "total_query_value_digit_count": {
+              "type": "long"
+            },
+            "total_query_value_length": {
+              "type": "long"
+            },
+            "total_query_value_symbol_count": {
+              "type": "long"
+            },
+            "total_query_variable_digit_count": {
+              "type": "long"
+            },
+            "total_query_variable_length": {
+              "type": "long"
+            },
+            "total_query_variable_symbol_count": {
+              "type": "long"
+            },
+            "url": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "url_delimiter_count": {
+              "type": "long"
+            },
+            "url_digit_count": {
+              "type": "long"
+            },
+            "url_digit_to_letter_ratio": {
+              "type": "float"
+            },
+            "url_encodes_characters": {
+              "type": "long"
+            },
+            "url_get_port": {
+              "type": "long"
+            },
+            "url_letter_count": {
+              "type": "long"
+            },
+            "url_symbol_count": {
+              "type": "long"
+            },
+            "url_uses_default_port_number": {
+              "type": "long"
+            },
+            "url_uses_https": {
+              "type": "long"
+            }
+          }
+        },
+        "model": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "prediction_score": {
+          "type": "long"
+        },
+        "url": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    }
+  }
+}

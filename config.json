@@ -1,0 +1,98 @@
+{
+  "data": {
+    "processed-output": "data/processed/",
+    "interim-output": "data/interim/",
+    "dataframe_loc": "data/processed/final_processed_with_features.csv",
+    "data_loc": "data/processed/preprocessed.csv",
+
+    "api": {
+      "root_route" : "/api/",
+      "curl_route" : "/api/api_curl/",
+      "file_load_route": "/api/api_files/",
+      "predicted_label": 1,
+      "confidence_score": 0.85
+    },
+
+    "random-forest":{
+      "test-size": 0.3,
+      "criterion": "gini",
+      "class_weight": "balanced",
+      "bootstrap": "true",
+      "n-estimators": 250,
+      "max-depth": 26,
+      "random_state": 1,
+      "filename": "models/random_forest.sav"
+    },
+
+    "datasets": {
+      "ds0": {
+        "name": "ds0",
+        "description": "Benign-URL-data",
+        "path": "data/raw/data-benign.csv",
+        "columns": {
+          "url": "link",
+          "label": null
+        },
+        "label": "benign"
+      },
+      "ds1": {
+        "name": "ds1",
+        "description": "Malicious-URL-data",
+        "path": "data/raw/data-malicious.csv",
+        "columns": {
+          "url": "link",
+          "label": null
+        },
+        "label": "malicious"
+      },
+      "ds2": {
+        "name": "ds2",
+        "description": "More-benign-URL-data",
+        "path": "data/raw/data_more_benign.csv",
+        "columns": {
+          "url": "link",
+          "label": null
+        },
+        "label": "benign"
+      },
+      "ds3": {
+        "name": "ds3",
+        "description": "Mixed-URL-data",
+        "path": "data/raw/testingset.csv",
+        "columns": {
+          "url": "url",
+          "label": "label"
+        },
+        "label": null
+      }
+    }
+  },
+
+  "kafka": {
+    "bootstrap_servers": ["localhost:9092"],
+    "api_version": [0, 10, 1],
+
+    "producer": {
+      "kafka_topic": "all_urls",
+      "bulk_load_file_path": "data/processed/preprocessed.csv"
+    },
+    "consumer": {
+      "kafka_topic_to_read_from": "all_urls",
+      "kafka_topic_to_send_to": "malicious_urls",
+      "group_id": "group_id",
+      "enable_auto_commit": false,
+      "auto_offset_reset": "earliest",
+      "consumer_timeout_ms": 30000,
+      "max_poll_interval_ms": 3600000
+    },
+    "predicted_label": 1,
+    "confidence_score": 0.85
+  },
+  "num_parallel_nodes": "",
+
+  "operating_system_version": "Ubuntu20.04",
+
+  "project": {
+    "version": 1.0
+  }
+}

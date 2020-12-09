@@ -1,0 +1,20 @@
+name: Publish To Docker
+
+on:
+  push:
+    branches: [ development ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+    steps:
+      - uses: actions/checkout@master
+      - name: Publish to Docker
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: mahyargorji/capstone:development
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
